@@ -1,0 +1,54 @@
+alias __git_ps1="git branch 2>/dev/null | grep '*' | sed 's/* \(.*\)/(\1)/'"
+
+export PS1="\[\033[1;34m\][\t]\[\033[1;32m\][\w]\[\033[1;36m\]\$(__git_ps1)\[\033[0m\] $ "
+
+export PATH=/usr/local/bin:$PATH
+export EDITOR="subl -w"
+
+alias ..="cd .."
+alias myip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p'"
+
+# GIT
+alias g="git"
+alias gfhc="git config --global user.name katherinefhc && git config --global user.email katherine.rosenkranz@florencehce.com"
+alias gkr="git config --global user.name krosenk729 && git config --global user.email krosenk729@gmail.com"
+alias ll="ls -lhA"
+alias gsuto="git branch --set-upstream-to=origin/"
+alias gsut="git branch --set-upstream-to="
+alias gaa="git add . -A"
+alias gc="git commit -m"
+alias gac="git add . -A && git commit -m"
+alias gacn="git add . -A && git commit -n -m"
+alias gs="git status"
+alias gd="git diff"
+alias gco="git checkout"
+alias gcob="git checkout -b"
+alias gb="git branch"
+alias glg="git log --graph --full-history --all --color --pretty=format:'%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s'"
+alias gp="git push"
+alias gpu="git pull"
+alias gbt="git branch -vv"
+alias gsro="git remote set-url origin "
+alias grv="git remote -v"
+alias gl="git log --graph --all --branches --decorate --pretty=format:'[%C(auto)%h%Creset][%C(cyan)%an %ar%Creset]%C(auto)%d%Creset %s %C(auto)%Creset'"
+alias gunc="git reset HEAD~1 --soft"
+alias grhard="git reset HEAD~1 --hard"
+alias gss="git stash save "
+alias gsl="git stash list"
+alias gsp="git stash pop"
+alias gitbd="git branch -d "
+
+# Docker
+alias dc="docker-compose "
+alias dcu="docker-compose up"
+alias dcd="docker-compose down"
+alias dce="docker-compose exec"
+alias dcr="docker-compose restart"
+alias dcp="docker-compose ps"
+alias dclogs="docker-compose logs -f --tail 200 "
+
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
